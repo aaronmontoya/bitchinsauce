@@ -1,0 +1,89 @@
+// Project-Specific Variables
+$headerheight: 115px;
+
+// Colors
+$color-dark1: #493e37;
+$color-dark2: #6d655f;
+$color-dark3: #d6b17f;
+$color-interactive1: #de5433;
+$color-light1: #fff;
+$color-light2: #fcfbf9;
+$color-light3: #f5ebdf;
+
+// Font Declarations
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  src: url('fonts/Roboto-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: normal;
+  src: url('fonts/Roboto-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: bold;
+  src: url('fonts/Roboto-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'AmaticSC';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/AmaticSC-Bold.ttf') format('truetype');
+}
+
+// Font Families
+$font-family: Roboto, sans-serif;
+$font-family-headline: AmaticSC, sans-serif;
+$font-family-action: AmaticSC, sans-serif;
+
+// Font Sizes
+$font-size-large4: 72px;
+$font-size-large3: 48px;
+$font-size-large2: 40px;
+$font-size-large1: 32px;
+$font-size-large0: 20px;
+$font-size: 16px;
+$font-size-small1: 12px;
+
+// Line Heights
+$line-height-large4: 72px;
+$line-height-large3: 48px;
+$line-height-large2: 40px;
+$line-height-large1: 40px;
+$line-height-large0: 24px;
+$line-height: 20px;
+$line-height-small1: 16px;
+
+// Grid Spacing
+$gridspacing: 8px;
+
+// Break Points
+$media-mobile: 320px;
+$media-tablet: 768px;
+$media-laptop: 1024px;
+$media-hd: 1440px;
+
+// Transitions / Animations
+$transition-duration: .3s;
+$transition-easing: cubic-bezier(0.42,2,0.36,1);
+$transition-easing-linear: linear;
+
+// Border Radius
+$border-radius: $gridspacing / 4;
+
+// Default z-index values
+$z-index-low: 1;
+$z-index-medium: 2;
+$z-index-high: 3;
+$z-index-highest: 4;

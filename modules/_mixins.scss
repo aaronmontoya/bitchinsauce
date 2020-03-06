@@ -1,0 +1,54 @@
+// Text Styles
+// Based on Sketch document
+@mixin textstyle-bodysmall {
+  font-family: $font-family;
+  font-size: $font-size-small1;
+  line-height: $line-height-small1;
+}
+@mixin textstyle-bodysmallbold {
+  @include textstyle-bodysmall;
+  font-weight: bold;
+}
+@mixin textstyle-body {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+@mixin textstyle-bodybold {
+  @include textstyle-body;
+  font-weight: bold;
+}
+@mixin textstyle-bodylarge {
+  font-family: $font-family;
+  font-size: $font-size-large0;
+  line-height: $line-height-large0;
+}
+@mixin textstyle-bodylargebold {
+  @include textstyle-bodylarge;
+  font-weight: bold;
+}
+@mixin textstyle-button {
+  font-family: $font-family-action;
+  font-size: $font-size-large1;
+  line-height: 4 * $gridspacing;
+}
+@mixin textstyle-headline1 {
+  font-family: $font-family-headline;
+  font-size: $font-size-large1;
+  line-height: $line-height-large1;
+}
+@mixin textstyle-headline2 {
+  font-family: $font-family-headline;
+  font-size: $font-size-large2;
+  line-height: $line-height-large2;
+}
+@mixin textstyle-headline3 {
+  font-family: $font-family-headline;
+  font-size: $font-size-large3;
+  line-height: $line-height-large3;
+}
+@mixin textstyle-title {
+  font-family: $font-family-headline;
+  font-size: $font-size-large4;
+  line-height: $line-height-large4;
+}

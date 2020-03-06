@@ -1,0 +1,71 @@
+.buttoniconsolo {
+   @include textstyle-button;
+
+   align-items: center;
+   background: transparent;
+   color: $color-light2;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   position: relative;
+
+   .buttoniconsolo-x-icon {
+      position: relative;
+      z-index: $z-index-high;
+      display: block;
+      padding: 2.25 * $gridspacing;
+      white-space: nowrap;
+   }
+
+   &:after {
+      background: url(images/button-solo-fill.svg) center no-repeat;
+      background-size: 100% 100%;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: scale(0.57);
+      transition: transform $transition-duration $transition-easing, filter $transition-duration $transition-easing;
+      width: 100%;
+      will-change: transform;
+      z-index: $z-index-low;
+   }
+
+   &:before {
+      background: url(images/button-solo-stroke.svg) center no-repeat;
+      background-size: 100% 100%;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      transform: scale(0.84);
+      top: 0;
+      z-index: $z-index-medium;
+   }
+
+   &:active {
+      // Prevent IE from moving text inside <button> on click
+      .buttoniconsolo-x-icon {
+         position: relative;
+      }
+
+      @supports (filter: hue-rotate(34deg) saturate(.36) brightness(1.59)) {
+         &:after {
+            filter: hue-rotate(34deg) saturate(.36) brightness(1.59);
+         }
+      }
+   }
+
+   &:focus, &:hover {
+      &:after {
+         transform: scale(1);
+      }
+   }
+
+   @supports (filter: hue-rotate(34deg)) {
+      outline: none;
+   }
+}

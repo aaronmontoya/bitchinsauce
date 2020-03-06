@@ -1,0 +1,301 @@
+.button {
+   @include textstyle-button;
+
+   align-items: center;
+   background: transparent;
+   color: $color-light2;
+   cursor: pointer;
+   display: flex;
+   margin: -0.75 * $gridspacing;
+   padding: 0.75 * $gridspacing;
+   position: relative;
+
+   > * {
+      position: relative;
+   }
+
+   .button-x-icon, .button-x-text {
+      position: relative;
+      z-index: $z-index-high;
+   }
+
+   .button-x-icon {
+      display: inline-block;
+      padding-left: $gridspacing / 4;
+      transition: transform $transition-easing $transition-duration;
+      will-change: transform;
+   }
+
+   .button-x-fillsides {
+      position: relative;
+      transition: margin $transition-duration $transition-easing;
+      will-change: margin;
+
+      &:after, &:before {
+         background-position: top right;
+         background-repeat: no-repeat;
+         background-size: 3px 103%;
+         bottom: 1px;
+         content: '';
+         left: 0;
+         position: absolute;
+         right: 0;
+         top: 0;
+         transition: filter $transition-duration $transition-easing-linear;
+         will-change: filter;
+         z-index: $z-index-medium;
+      }
+
+      &:after {
+         background-image: url('images/buttonfillright.svg');
+      }
+
+      &:before {
+         background-image: url('images/buttonfillleft.svg');
+         background-position-x: left;
+      }
+   }
+
+   .button-x-filltopbottom {
+      padding: 2px;
+      position: relative;
+      transition: margin $transition-duration $transition-easing;
+      will-change: margin;
+
+      &:after, &:before {
+         bottom: 0;
+         content: '';
+         left: 2px;
+         position: absolute;
+         right: 2px;
+         top: 0;
+         transition: filter $transition-duration $transition-easing-linear;
+         will-change: filter;
+         z-index: $z-index-medium;
+      }
+
+      &:after {
+         background: url('images/buttonfilltop.svg') top left repeat-x;
+      }
+
+      &:before {
+         background: url('images/buttonfillbottom.svg') bottom left repeat-x;
+      }
+   }
+
+   .button-x-strokesides {
+      &:after, &:before {
+         background-position: top left;
+         background-repeat: no-repeat;
+         background-size: 7px 100%;
+         bottom: 0;
+         content: '';
+         left: 0;
+         position: absolute;
+         right: 0;
+         top: 0;
+         z-index: $z-index-highest;
+      }
+
+      &:after {
+         background-image: url('images/buttonstrokeleft.svg');
+      }
+
+      &:before {
+         background-image: url('images/buttonstrokeright.svg');
+         background-position-x: right;
+      }
+   }
+
+   .button-x-stroketopbottom {
+      padding: $gridspacing;
+
+      &:after, &:before {
+         bottom: 0;
+         content: '';
+         left: 6px;
+         position: absolute;
+         right: 4px;
+         top: 0;
+         z-index: $z-index-highest;
+      }
+
+      &:after {
+         background: url('images/buttonstroketop.svg') top left repeat-x;
+      }
+
+      &:before {
+         background: url('images/buttonstrokebottom.svg') bottom left repeat-x;
+      }
+   }
+
+   .button-x-text {
+      background-color: $color-interactive1;
+      display: block;
+      padding: 0.75 * $gridspacing;
+      transition: background-color $transition-duration $transition-easing-linear, color $transition-duration $transition-easing-linear, padding $transition-duration $transition-easing;
+      white-space: nowrap;
+      will-change: background-color, color, padding;
+   }
+
+   &:active, &:focus, &:hover {
+      .button-x-text {
+         padding: 18px;
+      }
+
+      .button-x-fillsides {
+         margin: 0 -12px;
+      }
+
+      .button-x-filltopbottom {
+         margin: -12px 0;
+      }
+   }
+
+   &:hover, &:focus {
+      .button-x-icon {
+         transform: scale(1.07, 1.13) translateX(6px);
+      }
+   }
+
+   &:active {
+      // Prevent IE from moving text inside <button> on click
+      .button-x-text {
+         position: relative;
+      }
+
+      @supports (filter: hue-rotate(34deg) saturate(.36) brightness(1.59)) {
+         .button-x-fillsides, .button-x-filltopbottom {
+            &:after, &:before {
+               filter: hue-rotate(34deg) saturate(.36) brightness(1.59);
+            }
+         }
+
+         .button-x-text {
+            background-color: $color-dark3;
+         }
+      }
+   }
+
+   @supports (filter: hue-rotate(34deg)) {
+      outline: none;
+   }
+}
+
+.button-secondary {
+   .button-x-fillsides {
+      &:after {
+         background-image: url('images/buttonfilldarkright.svg');
+      }
+
+      &:before {
+         background-image: url('images/buttonfilldarkleft.svg');
+      }
+   }
+
+   .button-x-filltopbottom {
+      &:after {
+         background: url('images/buttonfilldarktop.svg') top left repeat-x;
+      }
+
+      &:before {
+         background: url('images/buttonfilldarkbottom.svg') bottom left repeat-x;
+      }
+   }
+
+   .button-x-text {
+      background-color: $color-dark1;
+   }
+
+   &:active {
+      @supports(filter: hue-rotate(21deg) saturate(1.8) brightness(2.85)) {
+         .button-x-fillsides, .button-x-filltopbottom {
+            &:after, &:before {
+               filter: hue-rotate(21deg) saturate(1.8) brightness(2.85);
+            }
+         }
+
+         .button-x-text {
+            background-color: $color-dark3;
+         }
+      }
+   }
+}
+
+.button-tertiary {
+   color: $color-interactive1;
+
+   .button-x-fillsides {
+      &:after {
+         background-image: none;
+      }
+
+      &:before {
+         background-image: none;
+      }
+   }
+
+   .button-x-filltopbottom {
+      &:after {
+         background: none;
+      }
+
+      &:before {
+         background: none;
+      }
+   }
+
+   .button-x-strokesides, .button-x-stroketopbottom {
+      &:after, &:before {
+         transition: filter $transition-duration $transition-easing-linear;
+         will-change: filter;
+      }
+   }
+
+   .button-x-text {
+      background-color: transparent;
+   }
+
+   &:active, &:focus, &:hover {
+      .button-x-text {
+         background-color: transparent;
+         padding: 0.75 * $gridspacing;
+      }
+
+      .button-x-fillsides {
+         margin: 0;
+      }
+
+      .button-x-filltopbottom {
+         margin: 0;
+      }
+
+      &:after {
+      }
+   }
+
+   &:active {
+      .button-x-text {
+         color: $color-dark3;
+         filter: none;
+      }
+
+      @supports(filter: hue-rotate(21deg) saturate(1.8) brightness(2.85)) {
+         .button-x-strokesides, .button-x-stroketopbottom {
+            &:after, &:before {
+               filter: hue-rotate(21deg) saturate(1.8) brightness(2.85) !important;
+            }
+         }
+      }
+   }
+
+   &:focus, &:hover {
+      @supports(filter: hue-rotate(-12deg) saturate(5.5) brightness(1.8)) {
+         .button-x-strokesides, .button-x-stroketopbottom {
+            &:after, &:before {
+               filter: hue-rotate(-12deg) saturate(5.5) brightness(1.8);
+            }
+         }
+      }
+   }
+}
