@@ -1,2 +1,2 @@
-# bitchinsauce
-Marketing website for Bitchin' Sauce food company
+# Bitchin' Sauce
+Code samples extracted from marketing website for Bitchin' Sauce food company
